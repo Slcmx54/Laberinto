@@ -1,4 +1,4 @@
-# 🧩 Maze Game
+# 🧩 Laberinto
 
 A retro-style maze adventure game built with Python and Pygame.
 
