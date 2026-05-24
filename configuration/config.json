@@ -1,0 +1,23 @@
+{
+    "lang": "es_co",
+    "radio_vision": 2,
+    "fullscreen": false,
+    "fps": 60,
+    "primer_inicio": false,
+    "niveles_completados": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false,
+        "6": false
+    },
+    "death_counter": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null
+    }
+}
