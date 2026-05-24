@@ -26,9 +26,7 @@ Explore the maze, survive enemy encounters, and find the exit to advance through
 
 Example:
 
-```md
 ![Gameplay](media/lvls/lvl1-completed.png)
-```
 
 ---
 
