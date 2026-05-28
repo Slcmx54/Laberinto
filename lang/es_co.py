@@ -22,6 +22,7 @@ LOSER = "PERDISTE"
 RESTART = "Reiniciar nivel"
 BACK = "Regresar al menú"
 NEXT = "Siguiente"
+THEEND = "Finalizaste el Juego"
 
 #SPLASH
 MADEBY = "Creado Por: "

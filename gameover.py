@@ -31,12 +31,14 @@ def gameover(eventos):
         REBOOT = config.banana(60).render(lang.RESTART, True, color_reboot)
         ATRAS = config.banana(60).render(lang.BACK, True, color_atras)
         SIGUIENTE = config.banana(60).render(lang.NEXT, True, color_siguiente)
+        FINALIZADO = config.banana(60).render(lang.THEEND, True, color_siguiente)
         TOTAL = config.banana(60).render(f"{config.NIVEL_ACTUAL} / 6", True, config.PURPLE)
 
         GANASTE_RECT = GANASTE.get_rect(center=(config.ANCHO // 2, config.ALTO // 2))
         REBOOT_RECT = REBOOT.get_rect(center=(config.ANCHO // (6/4), (config.ALTO // 2) + 200))
         ATRAS_RECT = ATRAS.get_rect(center=(config.ANCHO // (6/2), (config.ALTO // 2) + 200))
         SIGUIENTE_RECT = SIGUIENTE.get_rect(center=(config.ANCHO // 2, config.ALTO - 75))
+        FINALIZADO_RECT = FINALIZADO.get_rect(center=(config.ANCHO // 2, config.ALTO - 75))
         TOTAL_RECT = TOTAL.get_rect(center=(config.ANCHO // 2, 100))
 
         if REBOOT_RECT.collidepoint(MOUSE):
@@ -60,6 +62,8 @@ def gameover(eventos):
         config.PANTALLA.blit(TOTAL, TOTAL_RECT)
         if config.NIVEL_ACTUAL < 6:
             config.PANTALLA.blit(SIGUIENTE, SIGUIENTE_RECT)
+        if config.NIVEL_ACTUAL > 6:
+            config.PANTALLA.blit(FINALIZADO, FINALIZADO_RECT)
 
         for evento in eventos:
             if evento.type == pygame.MOUSEBUTTONDOWN:
@@ -82,15 +86,12 @@ def gameover(eventos):
             if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_RIGHT or evento.key == config.teclas["d"]:
                     config.opcion_gameover = 1
-                    anterior = 1
                 if evento.key == pygame.K_LEFT or evento.key == config.teclas["a"]:
                     config.opcion_gameover = 0
-                    anterior = 0
                 if evento.key == pygame.K_DOWN or evento.key == config.teclas["s"] and config.NIVEL_ACTUAL < 6:
                     config.opcion_gameover = 2
-                    opAnterior = anterior
                 if evento.key == pygame.K_UP or evento.key == config.teclas["w"] and config.NIVEL_ACTUAL < 6:
-                    config.opcion_gameover = opAnterior
+                    config.opcion_gameover = 0
                 if config.NIVEL_ACTUAL < 6:
                     config.opcion_gameover = max(0, min(2, config.opcion_gameover))
                 else:

@@ -62,22 +62,8 @@ def menu(eventos):
 
     OPTIONS_RECT = OPTIONS.get_rect(center=(config.menu_options_x, config.ALTO - 250))
     SALIR = config.banana(85).render(lang.EXIT, True, color_salir)
-    
-    if config.menu_salir_state == 0:
-        target = config.ALTO - 1
-        config.menu_salir_y = lerp(config.menu_salir_y, target, dt * 10)
-
-        if abs(config.menu_salir_y - target) < 2:
-            config.menu_salir_state = 1
-            config.menu_salir_timer = now
-        
-    elif config.menu_salir_state == 1:
-        if now - config.menu_salir_timer > 5000:
-            config.menu_salir_state = 2
-    
-    elif config.menu_salir_state == 2:
-        target = config.ALTO - 150
-        config.menu_salir_y = lerp(config.menu_salir_y, target, dt * 3)
+    target = config.ALTO - 150
+    config.menu_salir_y = lerp(config.menu_salir_y, target, dt * speed)
 
     SALIR_RECT = SALIR.get_rect(center=(config.ANCHO // 2, config.menu_salir_y))
     if NOMBRE_RECT.collidepoint(MOUSE):

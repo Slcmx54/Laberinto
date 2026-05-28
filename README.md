@@ -22,8 +22,6 @@ Explore dangerous labyrinths, avoid enemies, collect important objects, and reac
 
 Explore the maze, survive enemy encounters, and find the exit to advance through the game.
 
-> Add screenshots or GIFs inside a `/screenshots` folder.
-
 Example:
 
 ![Gameplay](media/lvls/lvl1-completed.png)
