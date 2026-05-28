@@ -3,7 +3,7 @@
     "radio_vision": 2,
     "fullscreen": false,
     "fps": 60,
-    "primer_inicio": false,
+    "primer_inicio": true,
     "niveles_completados": {
         "1": true,
         "2": true,
